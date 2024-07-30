@@ -17,5 +17,8 @@ public class Main {
         Department department = context.getBean(Department.class);
         department.setName("개발팀");
         System.out.println(department.getName());
+        employee.setName("을지문덕");
+        Company company = context.getBean(Company.class);
+        company.getEmployeeName();
     }
 }
