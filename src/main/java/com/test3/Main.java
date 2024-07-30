@@ -1,9 +1,7 @@
 package com.test3;
-
 // class Database {
 //     void open() { System.out.println("Database Open");}
 // }
-
 interface Database {
     void open();
 }
@@ -13,7 +11,6 @@ class MySql implements Database {
 class Oracle implements Database {
     public void open() { System.out.println("Oracle Open()");}
 }
-
 public class Main {
     static Database CreateDatabase(String dbName) {
         Database db = null;
@@ -33,5 +30,4 @@ public class Main {
         Database db2 = CreateDatabase("Oracle");
         db2.open();
     }
-
 }
