@@ -1,13 +1,17 @@
 package com.test3;
 
-class Database {
-    void open() { System.out.println("Database Open");}
+// class Database {
+//     void open() { System.out.println("Database Open");}
+// }
+
+interface Database {
+    void open();
 }
-class MySql extends Database {
-    void open() { System.out.println("MySql Open()");}
+class MySql implements Database {
+    public void open() { System.out.println("MySql Open()");}
 }
-class Oracle extends Database {
-    void open() { System.out.println("Oracle Open()");}
+class Oracle implements Database {
+    public void open() { System.out.println("Oracle Open()");}
 }
 
 public class Main {
