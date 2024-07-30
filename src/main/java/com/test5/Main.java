@@ -46,5 +46,7 @@ class JavaConfig {}
 public class Main {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(JavaConfig.class);
+        MessageProcessor messageProcessor = context.getBean(MessageProcessor.class);
+        messageProcessor.processMsg("안녕하세요.");
     }
 }
