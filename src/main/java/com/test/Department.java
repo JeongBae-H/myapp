@@ -1,7 +1,9 @@
 package com.test;
 
+import org.springframework.stereotype.Component;
 
-public class Student {
+@Component
+public class Department {
     private String name;
 
     public String getName() {

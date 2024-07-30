@@ -10,5 +10,12 @@ public class Main {
         Student student = context.getBean("student", Student.class);
         student.setName("이순신");
         System.out.println(student.getName());
+        Address address = context.getBean(Address.class);
+        address.setLocation("서울");
+        Employee employee = context.getBean(Employee.class);
+        System.out.println(employee.getAddress().getLocation());
+        Department department = context.getBean(Department.class);
+        department.setName("개발팀");
+        System.out.println(department.getName());
     }
 }
