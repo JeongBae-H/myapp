@@ -6,6 +6,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 interface Database {void open();}
@@ -14,6 +15,7 @@ class MySql implements Database {
     public void open() { System.out.println("MySql Open()");}
 }
 @Component
+@Primary
 class Oracle implements Database {
     public void open() { System.out.println("Oracle Open()");}
 }
@@ -24,7 +26,8 @@ class JavaConfig {}
 class DbManager {
     Database db;
     @Autowired
-    public DbManager(@Qualifier("mySql") Database db) {
+    // public DbManager(@Qualifier("mySql") Database db) {
+    public DbManager(Database db) {
         this.db = db;
     }
     public void dbOpen() {
