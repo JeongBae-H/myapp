@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 interface MessageService {
@@ -14,14 +15,15 @@ interface MessageService {
 class EmailService implements MessageService{
     @Override
     public void sendMsg(String message) {
-        System.out.println(message);
+        System.out.println(message + ", EmailService");
     }
 }
 @Component
+@Primary
 class SmsService implements MessageService {
     @Override
     public void sendMsg(String message) {
-        System.out.println(message);
+        System.out.println(message + ", SmsService");
     }
 }
 interface MessageProcessor {
